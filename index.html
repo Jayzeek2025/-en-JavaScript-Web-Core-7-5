@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Webcore-Final Styling</title>
+
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+   <!-- Main container-->
+   <div class="container">
+
+      <!-- Text Header-->
+      <div class="header_text">
+         <h2>Ремонт техники различных брендов</h2>
+      </div>
+
+      <div class="mobile-content">
+         <!-- Slider main container -->
+         <div class="swiper">
+
+            <!-- Wrapper -->
+            <div class="swiper-wrapper">
+
+               <!-- Slides -->
+               <div class="swiper-slide">
+                  <img src="img/cat1.jpg" alt="lenovo" />
+               </div>
+
+               <div class="swiper-slide">
+                  <img src="img/cat1 copy.jpg" alt="samsung" />
+               </div>
+
+               <div class="swiper-slide">
+                  <img src="img/cat1 copy 9.jpg" alt="acer" />
+               </div>
+
+               <div class="swiper-slide">
+                  <img src="img/cat1 copy 8.jpg" alt="hp" />
+               </div>
+
+               <div class="swiper-slide">
+                  <img src="img/cat1 copy 7.jpg" alt="bosch" />
+               </div>
+
+               <div class="swiper-slide">
+                  <img src="img/cat1 copy 3.jpg" alt="viewsonic" />
+               </div>
+
+               <div class="swiper-slide">
+                  <img src="img/cat1 copy 11.jpg" alt="apple" />
+               </div>
+
+               <div class="swiper-slide">
+                  <img src="img/cat1 copy 10.jpg" alt="sony" />
+               </div>
+
+               <div class="swiper-slide">
+                  <img src="img/cat1.jpg" alt="lenovo" />
+               </div>
+
+            </div><!--Swiper Wrapper Closing -->
+
+            <!--Pagination -->
+            <div class="swiper-pagination"></div>
+
+         </div><!--Swiper closing-->
+      </div><!--Mobile Content Closing -->
+
+      <div class="tablet-content">
+         <ul class="slides">
+
+            <li class="slides__cards"><img src="img/cat1.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 10.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 11.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 3.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 7.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 10.jpg" alt="card" /></li>
+            <li class="slides__cards desktop_view"><img src="img/cat1 copy 11.jpg" alt="card" /></li>
+            <li class="slides__cards desktop_view"><img src="img/cat1 copy.jpg" alt="card" /></li>
+
+         </ul>
+
+         <details class="show-more">
+            <summary>
+
+               <div class="show-more__button">
+                  <img src="img/icon.jpg" alt="expand" />
+                  <p class="show-more__text">Показать все</p>
+               </div>
+
+            </summary>
+            <ul class="slides">
+
+               <li class="slides__cards"><img src="img/cat1 copy 10.jpg" alt="card" /></li>
+               <li class="slides__cards"><img src="img/cat1 copy 11.jpg" alt="card" /></li>
+               <li class="slides__cards"><img src="img/cat1 copy 3.jpg" alt="card" /></li>
+               <li class="slides__cards desktop-hide"><img src="img/cat1 copy 7.jpg" alt="card" /></li>
+               <li class="slides__cards desktop-hide"><img src="img/cat1 copy 8.jpg" alt="card" /></li>
+               <li class="slides__cards desktop-hide"><img src="img/cat1 copy.jpg" alt="card" /></li>
+
+            </ul>
+         </details>
+
+
+      </div><!--brand closing-->
+   </div><!--container closing-->
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+   </script>
+
+   <script>
+
+      const swiper = new Swiper('.swiper', {
+
+         // Optional parameters
+         direction: 'horizontal',
+         slidesPerView: 1.3,
+         spaceBetween: 16,
+         centeredSlides: true,
+
+         // If we need pagination
+         pagination: {
+            el: '.swiper-pagination',
+         },
+
+      });
+
+      // Show-more -> Show-less
+      document.querySelector('.show-more').addEventListener('toggle', toggleShowMore);
+
+      function toggleShowMore() {
+         const textElement = document.querySelector('.show-more__text');
+
+         if (textElement.textContent === 'Показать все') { textElement.textContent = 'Скрыть'; }
+
+         else {textElement.textContent = 'Показать все';}
+      }
+
+   </script>
+</body>
+
+</html>
