@@ -86,26 +86,28 @@
 
          </ul>
 
-         <details class="show-more">
-            <summary>
+         <ul class="additional_items">
 
-               <div class="show-more__button">
-                  <img src="img/icon.jpg" alt="expand" />
-                  <p class="show-more__text">Показать все</p>
-               </div>
+            <li class="slides__cards"><img src="img/cat1 copy 10.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 11.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 3.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 7.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 8.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 10.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 11.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 3.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy 7.jpg" alt="card" /></li>
+            <li class="slides__cards"><img src="img/cat1 copy.jpg" alt="card" /></li>
 
-            </summary>
-            <ul class="slides">
+         </ul>
 
-               <li class="slides__cards"><img src="img/cat1 copy 10.jpg" alt="card" /></li>
-               <li class="slides__cards"><img src="img/cat1 copy 11.jpg" alt="card" /></li>
-               <li class="slides__cards"><img src="img/cat1 copy 3.jpg" alt="card" /></li>
-               <li class="slides__cards desktop-hide"><img src="img/cat1 copy 7.jpg" alt="card" /></li>
-               <li class="slides__cards desktop-hide"><img src="img/cat1 copy 8.jpg" alt="card" /></li>
-               <li class="slides__cards desktop-hide"><img src="img/cat1 copy.jpg" alt="card" /></li>
+         <button class="show-more">
+            <img class="show-more__arrow" src="img/icon.jpg" alt="expand" />
+            <p class="show-more__text">Показать все</p>
+         </button>
 
-            </ul>
-         </details>
+         
 
 
       </div><!--brand closing-->
@@ -133,16 +135,24 @@
 
       });
 
-      // Show-more -> Show-less
-      document.querySelector('.show-more').addEventListener('toggle', toggleShowMore);
+      let button = document.querySelector('.show-more');
+      let additionalItems = document.querySelector('.additional_items');
+      let showMoreText = document.querySelector('.show-more__text');
+      let arrow = document.querySelector('.show-more__arrow');
 
-      function toggleShowMore() {
-         const textElement = document.querySelector('.show-more__text');
 
-         if (textElement.textContent === 'Показать все') { textElement.textContent = 'Скрыть'; }
+      button.addEventListener("click", function(){
+         if (additionalItems.classList.contains('is-visible')){
+            additionalItems.classList.remove('is-visible');
+            showMoreText.textContent="Показать все";
+            arrow.style.transform="rotate(0deg)";
+         }
+         else{additionalItems.classList.add('is-visible');
+            showMoreText.textContent="Скрыть";
+            arrow.style.transform="rotate(180deg)";
+         }
+      })
 
-         else {textElement.textContent = 'Показать все';}
-      }
 
    </script>
 </body>
